@@ -7,7 +7,7 @@ import Header from '../Header';
 import OrderCard from '../OrderCard';
 import { Order } from '../types';
 
-function Orders() {
+export default function Orders() {
   const [orders, setOrders] = useState<Order[]>([])
   const [isLoading, setIsLoading] = useState(false)
   const navigation = useNavigation()
@@ -18,7 +18,7 @@ function Orders() {
     fetchOrders()
       .then(response => setOrders(response.data))
       .catch(() => Alert.alert('Houve um erro ao buscar os pedidos!'))
-      .finally(() => setIsLoading(false));
+      .finally(() => setIsLoading(false))
   }
 
   useEffect(() => {
@@ -66,5 +66,3 @@ const styles = StyleSheet.create({
     paddingLeft: '5%'
   }
 });
-
-export default Orders;

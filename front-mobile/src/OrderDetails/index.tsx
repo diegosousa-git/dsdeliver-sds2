@@ -16,7 +16,7 @@ type Props = {
   }
 }
 
-function OrderDetails({ route }: Props) {
+export default function OrderDetails({ route }: Props) {
   const { order } = route.params
   const navigation = useNavigation()
 
@@ -83,5 +83,3 @@ const styles = StyleSheet.create({
     fontFamily: 'OpenSans_700Bold'
   }
 });
-
-export default OrderDetails;
